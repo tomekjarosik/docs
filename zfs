@@ -5,7 +5,8 @@
 ```
 # create a zfs pool:
 sudo zpool create mypool /dev/sdb /dev/sdc 
-# and volumes inside it, mounted in /mypool/
+# and volumes inside it, mounted by default in /mypool/
+# you can custoum mount with: `zfs create -o mountpoint=/export/zfs tank/home`
 sudo zfs create mypool/tmp
 sudo zfs create mypool/projects
 # set a quota:
