@@ -32,6 +32,7 @@ Resources
 [ubuntu-lxd](https://powersj.github.io/post/ubuntu-lxd/)
 [getting started LXD](https://linuxcontainers.org/lxd/getting-started-cli/)
 [lxd storage](https://insights.ubuntu.com/2017/07/12/storage-management-in-lxd-2-15)
+[lxd cheat-sheet](https://www.jamescoyle.net/cheat-sheets/2540-lxc-2-x-lxd-cheat-sheet)
 
 
 
