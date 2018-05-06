@@ -14,9 +14,15 @@ Then:
 ```
 lxc exec my-container bash
 ```
-### Storage
-`lxc storage list`
+or start container on a specific storage
+```
+lxc launch ubuntu:18.04/amd64 -s my-zfs-pool
+```
 
+### Storage
+`lxc storage list` and `lxc storage create my-storage-pool zfs`.
+More here:
+https://lxd.readthedocs.io/en/latest/storage/
 
 
 
