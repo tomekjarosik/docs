@@ -24,15 +24,22 @@ lxc exec my-redis bash
 ```
 
 ### Storage
-`lxc storage list` and `lxc storage create my-storage-pool zfs`.
+```
+lxc storage list
+lxc storage create my-storage-pool zfs
+lxc storage info <your-pool-name>
+```
+
 More here:
 https://lxd.readthedocs.io/en/latest/storage/
+
 
 TODO verify this:
 ```
 lxc storage volume create <pool-name> <volume-name>
 lxc storage volume attach <pool-name> <volume-name> <container-name> <device-name> path=</some/path/in/the/container>
 ```
+
 
 Resources
 ====
