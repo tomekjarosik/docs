@@ -14,8 +14,19 @@ sudo zfs create mypool/projects
 zfs set quota=20g mypool/projects
 
 # list volumes and pools
-zfs list
-
+$ zfs list
+NAME                                                                                USED  AVAIL  REFER  MOUNTPOINT
+ssd850evo                                                                          2.06G   447G    24K  none
+ssd850evo/containers                                                                870M   447G    24K  none
+ssd850evo/containers/dev-redis                                                      225M   447G   839M  /var/lib/lxd/storage-pools/ssd850evo/containers/dev-redis
+ssd850evo/containers/rabbitmq                                                       628M   447G  1.18G  /var/lib/lxd/storage-pools/ssd850evo/containers/rabbitmq
+ssd850evo/containers/ssh-jump-host                                                 16.7M   447G   642M  /var/lib/lxd/storage-pools/ssd850evo/containers/ssh-jump-host
+ssd850evo/custom                                                                     24K   447G    24K  none
+ssd850evo/deleted                                                                    24K   447G    24K  none
+ssd850evo/images                                                                   1.21G   447G    24K  none
+ssd850evo/images/09f5b95034ec4b0c1a59258557d32e3a11800c7cb61d34f2dfd5883c078931fd   603M   447G   603M  none
+ssd850evo/images/b36ec647e374da4816104a98807633a2cc387488083d3776557081c4d0333618   633M   447G   633M  none
+ssd850evo/snapshots                                                                  24K   447G    24K  none
 
 ```
 
