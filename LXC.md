@@ -16,7 +16,11 @@ lxc exec my-container bash
 ```
 or start container on a specific storage
 ```
-lxc launch ubuntu:18.04/amd64 -s my-zfs-pool
+lxc launch ubuntu:18.04/amd64 my-redis -s my-zfs-pool
+```
+start bash inside it:
+```
+lxc exec my-redis bash
 ```
 
 ### Storage
