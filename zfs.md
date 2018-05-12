@@ -13,6 +13,10 @@ sudo zfs create mypool/projects
 # set a quota:
 zfs set quota=20g mypool/projects
 
+# list volumes and pools
+zfs list
+
+
 ```
 
 
