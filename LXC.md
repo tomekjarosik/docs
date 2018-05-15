@@ -30,6 +30,11 @@ lxc storage create my-storage-pool zfs
 lxc storage info <your-pool-name>
 ```
 
+Add new lxc storage:
+```
+lxc storage create test-pool zfs source=ironwolf/containers
+```
+
 More here:
 https://lxd.readthedocs.io/en/latest/storage/
 
