@@ -3,6 +3,8 @@
 [how-to-set-a-quota-on-zfs](https://docs.oracle.com/cd/E23823_01/html/819-5461/gazvb.html)
 [samba-on-zfs](http://www.supermaru.com/2017/05/ubuntu-zfs-samba-share/)
 https://blog.programster.org/zfs-create-disk-pools
+
+[cheat-sheet](https://www.thegeekdiary.com/solaris-zfs-command-line-reference-cheat-sheet/)
 ```
 # create a zfs pool:
 sudo zpool create mypool /dev/sdb /dev/sdc 
