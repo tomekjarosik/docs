@@ -95,3 +95,6 @@ backend healthcheck-backend
   http-request set-header X-Forwared-Port %[dst_port]
   http-request add-header X-Forwarded-Proto https if { ssl_fc }
 ```
+
+Verify config:
+`sudo haproxy -f /etc/haproxy/haproxy.cfg -c`
