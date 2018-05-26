@@ -5,3 +5,6 @@ sudo gitlab-ctl reconfigure
 https://stackoverflow.com/questions/19902417/change-the-data-directory-gitlab-to-store-repos-elsewhere
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04
+
+SSL termination on HAProxy:
+https://docs.gitlab.com/omnibus/settings/nginx.html#supporting-proxied-ssl
