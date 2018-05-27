@@ -32,6 +32,23 @@ ssd850evo/snapshots                                                             
 
 ```
 
+Backup and restore:
+[oracle tutorial](https://pavelanni.github.io/oracle_solaris_11_labs/zfs/zfs_backup/)
+```
+# backup:
+zfs snapshot rpool/data@backup-`date +%Y-%m-%d`
+zfs send rpool/data@backup-2016-03-28 | zfs recv -o compression=lz4 backuppool/backup
+# and restore:
+zfs send backuppool/backup@backup-2016-03-28 | zfs recv -o compression=lz4 -o mountpoint=/data rpool/data
+```
+Or to a file:
+```
+# backup:
+zfs send rpool/data@backup-2016-03-28 > backup
+# and restore:
+zfs recv -o compression=lz4 -o mountpoint=/data rpool/data < backup
+```
+
 
 
 
