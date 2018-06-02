@@ -41,7 +41,45 @@ tctl users add joe joe,root
 
 Adding a new node
 =======
-Add below content to `/etc/systemd/system/teleport.service` on each node, remember to replace `node-token` with your secret token:
+Create config file in `/etc/teleport.yaml` and remember to replace `node-token` with your secret token:
+```
+teleport:
+  nodename: nextcloud
+  data_dir: /var/lib/teleport
+  pid_file: /var/run/teleport.pid
+  auth_token: node-token
+  connection_limits:
+    max_connections: 1000
+    max_users: 250
+  log:
+    output: stderr
+    severity: INFO
+ssh_service:
+  enabled: "yes"
+  listen_addr: 0.0.0.0:3022
+  labels:
+    role: cloud
+  commands:
+  - name: hostname
+    command: [/bin/hostname]
+    period: 1m0s
+  - name: arch
+    command: [/bin/uname, -p]
+    period: 1h0m0s
+  - name: disk
+    command: [/bin/df, /, -lhP]
+    period: 0h1m0s
+  - name: ram
+    command: [/usr/bin/free, -mh]
+    period: 0h1m0s
+  - name: top
+    command: [/usr/bin/top, -n, 1, -b]
+    period: 0h1m0s
+  - name: uptime
+    command: [/usr/bin/uptime, -p]
+    period: 1m0s
+```
+Add below content to `/etc/systemd/system/teleport.service`:
 ```
 [Unit]
 Description=Teleport SSH Service
@@ -50,7 +88,7 @@ After=network.target
 [Service]
 Type=simple
 Restart=on-failure
-ExecStart=/usr/local/bin/teleport start --roles=node --token=node-token --auth-server=10.39.124.223 --labels uptime=[1m:"uptime -p"],kernel=[1h:"uname -r"] --pid-file=/var/run/teleport.pid
+ExecStart=/usr/local/bin/teleport start --roles=node  --auth-server=10.39.124.223 --pid-file=/var/run/teleport.pid
 ExecReload=/bin/kill -HUP $MAINPID
 PIDFile=/var/run/teleport.pid
 
