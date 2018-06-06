@@ -101,3 +101,12 @@ Started Teleport SSH Service.
 [NODE]    Service is starting on 0.0.0.0:3022.
 ```
 If everything went well, run: `systemctl enable teleport` to add it persistenly on every boot
+
+Optionally: `disk_usage.sh`
+```
+/bin/df / -h | /usr/bin/tail -1 | /usr/bin/awk '{print $1" "$3" of "$2}'
+```
+`ram_usage.sh`:
+```
+
+```
