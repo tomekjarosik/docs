@@ -46,6 +46,13 @@ lxc storage volume attach <pool-name> <volume-name> <container-name> <device-nam
 ```
 
 
+TODO: verify this:
+```
+nano /var/lib/lxc/containername/config
+lxc.mount.entry = /media/data/share share none bind,create=dir 0.0
+
+```
+
 Resources
 ====
 [lxd introduction](https://stgraber.org/2016/03/11/lxd-2-0-introduction-to-lxd-112/) )
@@ -53,6 +60,7 @@ Resources
 [getting started LXD](https://linuxcontainers.org/lxd/getting-started-cli/)
 [lxd storage](https://insights.ubuntu.com/2017/07/12/storage-management-in-lxd-2-15)
 [lxd cheat-sheet](https://www.jamescoyle.net/cheat-sheets/2540-lxc-2-x-lxd-cheat-sheet)
+[sharing directories](https://askubuntu.com/questions/610513/how-do-i-share-a-directory-between-an-lxc-container-and-the-host)
 
 
 
