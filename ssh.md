@@ -26,3 +26,14 @@ and then:
 ```
 ssh r730
 ```
+
+OpenSSL
+====
+Encryption:
+```
+openssl rsautl -encrypt -pubin -inkey public.key -in plaintext.txt -out encrypted.txt
+```
+Decryption:
+```
+openssl rsautl -decrypt -inkey private.key -in encrypted.txt -out plaintext.txt
+```
