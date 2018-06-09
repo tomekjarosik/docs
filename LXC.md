@@ -46,11 +46,17 @@ lxc storage volume attach <pool-name> <volume-name> <container-name> <device-nam
 ```
 
 
-TODO: verify this:
+Mount shared directory to a container. TODO: verify this:
 ```
 nano /var/lib/lxc/containername/config
 lxc.mount.entry = /media/data/share share none bind,create=dir 0.0
 
+```
+
+Move container to another storage pool:
+```
+lxc publish -f <container> --alias <container> # (this will stop the container and restart it)
+lxc launch local:<hash> <container-name> -s <storage-pool-of-choosing>
 ```
 
 Resources
