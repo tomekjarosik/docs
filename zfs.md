@@ -49,7 +49,8 @@ zfs send rpool/data@backup-2016-03-28 > backup
 zfs recv -o compression=lz4 -o mountpoint=/data rpool/data < backup
 ```
 
-
+ARC:
+http://www.c0t0d0s0.org/archives/5329-Some-insight-into-the-read-cache-of-ZFS-or-The-ARC.html
 
 
 
