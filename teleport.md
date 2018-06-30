@@ -12,7 +12,7 @@ sh install
 ```
 Next, create initial config
 ```
-teleport configure > /etc/teleport.conf`
+teleport configure > /etc/teleport.conf
 ```
 and edit it according to your needs.
 
