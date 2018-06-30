@@ -108,5 +108,6 @@ Optionally: `disk_usage.sh`
 ```
 `ram_usage.sh`:
 ```
-
+#!/bin/bash
+free -mh | tail -2 | head -1 | awk '{ print $3" of "$2 }'
 ```
