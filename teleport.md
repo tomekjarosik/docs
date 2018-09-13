@@ -5,7 +5,7 @@ https://gravitational.com/teleport/docs/admin-guide/
 Installation at:
 https://gravitational.com/teleport/download
 ```
-curl https://get.gravitational.com/teleport-v2.6.1-linux-amd64-bin.tar.gz -O 
+curl https://get.gravitational.com/teleport-v2.7.4-linux-amd64-bin.tar.gz -O
 tar xzf teleport-v2.6.1-linux-amd64-bin.tar.gz
 cd teleport
 sh install
@@ -104,6 +104,7 @@ If everything went well, run: `systemctl enable teleport` to add it persistenly 
 
 Optionally: `disk_usage.sh`
 ```
+#!/bin/bash
 /bin/df / -h | /usr/bin/tail -1 | /usr/bin/awk '{print $1" "$3" of "$2}'
 ```
 `ram_usage.sh`:
