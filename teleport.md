@@ -95,10 +95,19 @@ PIDFile=/var/run/teleport.pid
 [Install]
 WantedBy=multi-user.target
 ```
-and then run: `service teleport start`, check if it is connected via `cat /var/lib/syslog`. You must see something silimar to:
+and then run: `service teleport start`, check if it is connected via `systemctl status teleport`. You must see something silimar to:
 ```
-Started Teleport SSH Service.
-[NODE]    Service is starting on 0.0.0.0:3022.
+
+Sep 13 20:22:07 dev-jkamma-sandbox teleport[384]: INFO [PROC:1]    Service node is creating new listener on 0.0.0.0:3022
+Sep 13 20:22:07 dev-jkamma-sandbox teleport[384]: INFO [AUDIT:1]   Creating directory /var/lib/teleport/log. service/ser
+Sep 13 20:22:07 dev-jkamma-sandbox teleport[384]: INFO [AUDIT:1]   Creating directory /var/lib/teleport/log/upload. serv
+Sep 13 20:22:07 dev-jkamma-sandbox teleport[384]: INFO [AUDIT:1]   Creating directory /var/lib/teleport/log/upload/sessi
+Sep 13 20:22:07 dev-jkamma-sandbox teleport[384]: INFO [AUDIT:1]   Creating directory /var/lib/teleport/log/upload/sessi
+Sep 13 20:22:07 dev-jkamma-sandbox teleport[384]: INFO [NODE:1]    Service is starting on 0.0.0.0:3022 cache that will e
+Sep 13 20:22:07 dev-jkamma-sandbox teleport[384]: INFO [NODE]      Service is starting on 0.0.0.0:3022. utils/cli.go:157
+Sep 13 20:22:07 dev-jkamma-sandbox teleport[384]: [NODE]    Service is starting on 0.0.0.0:3022.
+Sep 13 20:22:07 dev-jkamma-sandbox teleport[384]: INFO [PROC:1]    New service has started successfully. service/service
+Sep 13 20:22:07 dev-jkamma-sandbox teleport[384]: INFO [PROC:1]    The new service has started successfully. Starting sy
 ```
 If everything went well, run: `systemctl enable teleport` to add it persistenly on every boot
 
