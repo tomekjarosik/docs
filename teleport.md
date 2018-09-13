@@ -63,6 +63,9 @@ ssh_service:
   - name: hostname
     command: [/bin/hostname]
     period: 1m0s
+  - name: vCPU
+    command: [/usr/bin/nproc]
+    period: 1m0s
   - name: arch
     command: [/bin/uname, -p]
     period: 1h0m0s
