@@ -67,6 +67,7 @@ Resources
 [lxd storage](https://insights.ubuntu.com/2017/07/12/storage-management-in-lxd-2-15)
 [lxd cheat-sheet](https://www.jamescoyle.net/cheat-sheets/2540-lxc-2-x-lxd-cheat-sheet)
 [sharing directories](https://askubuntu.com/questions/610513/how-do-i-share-a-directory-between-an-lxc-container-and-the-host)
+[resource control](https://stgraber.org/2016/03/26/lxd-2-0-resource-control-412/)
 
 
 
