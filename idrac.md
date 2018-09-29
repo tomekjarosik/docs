@@ -10,6 +10,7 @@ from localhost:
 ```
 racadm sslkeyupload -t 1 -f xxx.key
 racadm sslcertupload -t 1 -f xxx.crt
+racadm racreset
 ```
 
 https://blog.nanpuyue.com/2018/039.html
