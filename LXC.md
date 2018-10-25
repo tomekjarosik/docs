@@ -59,6 +59,14 @@ lxc publish -f <container> --alias <container> # (this will stop the container a
 lxc launch local:<hash> <container-name> -s <storage-pool-of-choosing>
 ```
 
+#### Network
+```
+lxc init ubuntu:18.04 prod-nvme-dns -s optane900p
+lxc config device add prod-nvme-dns eth0 nic nictype=bridged parent=prod-br0 name=eth0
+lxc config device set prod-nvme-dns eth0 ipv4.address 10.10.10.10
+lxc start prod-nvme-dns
+```
+
 Resources
 ====
 [lxd introduction](https://stgraber.org/2016/03/11/lxd-2-0-introduction-to-lxd-112/) )
